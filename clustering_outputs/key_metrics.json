@@ -1,0 +1,87 @@
+{
+  "identity_count": 196,
+  "clip_count": 515,
+  "spaces": [
+    "acoustic_core",
+    "acoustic_all16",
+    "ecapa",
+    "hybrid"
+  ],
+  "boundary_views": 2,
+  "selected_models": [
+    {
+      "view": "original",
+      "space": "acoustic_core",
+      "selected_k": 3,
+      "silhouette": 0.2117876183302593,
+      "dimensions": 9,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    },
+    {
+      "view": "original",
+      "space": "acoustic_all16",
+      "selected_k": 4,
+      "silhouette": 0.2242786147120609,
+      "dimensions": 16,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    },
+    {
+      "view": "original",
+      "space": "ecapa",
+      "selected_k": 2,
+      "silhouette": 0.05703787878155708,
+      "dimensions": 192,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    },
+    {
+      "view": "original",
+      "space": "hybrid",
+      "selected_k": 3,
+      "silhouette": 0.10795377835691825,
+      "dimensions": 201,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    },
+    {
+      "view": "edge_trimmed",
+      "space": "acoustic_core",
+      "selected_k": 2,
+      "silhouette": 0.32449874641757,
+      "dimensions": 9,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    },
+    {
+      "view": "edge_trimmed",
+      "space": "acoustic_all16",
+      "selected_k": 2,
+      "silhouette": 0.41754371451533867,
+      "dimensions": 16,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    },
+    {
+      "view": "edge_trimmed",
+      "space": "ecapa",
+      "selected_k": 2,
+      "silhouette": 0.05944230780005455,
+      "dimensions": 192,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    },
+    {
+      "view": "edge_trimmed",
+      "space": "hybrid",
+      "selected_k": 2,
+      "silhouette": 0.178490988940219,
+      "dimensions": 201,
+      "support_constraints_met": true,
+      "selection": "maximum eligible full-space silhouette"
+    }
+  ],
+  "figures": 20,
+  "api_calls": 0
+}

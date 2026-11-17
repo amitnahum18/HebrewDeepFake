@@ -1,0 +1,17 @@
+﻿view,space,field,nmi,interpretation
+edge_trimmed,acoustic_all16,label,0.13242343840481152,posthoc association not accuracy; labels not used for fitting or k
+edge_trimmed,acoustic_all16,family,0.2828839466049497,posthoc association not accuracy; labels not used for fitting or k
+edge_trimmed,acoustic_core,label,0.11875520190654225,posthoc association not accuracy; labels not used for fitting or k
+edge_trimmed,acoustic_core,family,0.27726828333766174,posthoc association not accuracy; labels not used for fitting or k
+edge_trimmed,ecapa,label,0.8573847262025227,posthoc association not accuracy; labels not used for fitting or k
+edge_trimmed,ecapa,family,0.5563639081656425,posthoc association not accuracy; labels not used for fitting or k
+edge_trimmed,hybrid,label,0.137386482609462,posthoc association not accuracy; labels not used for fitting or k
+edge_trimmed,hybrid,family,0.2889948988754148,posthoc association not accuracy; labels not used for fitting or k
+original,acoustic_all16,label,0.3627313325556924,posthoc association not accuracy; labels not used for fitting or k
+original,acoustic_all16,family,0.5737277850010845,posthoc association not accuracy; labels not used for fitting or k
+original,acoustic_core,label,0.24364365962437673,posthoc association not accuracy; labels not used for fitting or k
+original,acoustic_core,family,0.3394874406640518,posthoc association not accuracy; labels not used for fitting or k
+original,ecapa,label,0.8743130897926322,posthoc association not accuracy; labels not used for fitting or k
+original,ecapa,family,0.5722686372208492,posthoc association not accuracy; labels not used for fitting or k
+original,hybrid,label,0.351410319298564,posthoc association not accuracy; labels not used for fitting or k
+original,hybrid,family,0.39671820660439633,posthoc association not accuracy; labels not used for fitting or k

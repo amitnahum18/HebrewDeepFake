@@ -1,0 +1,42 @@
+{
+  "pdf": "C:\\project_ML\\HebrewDeepFake\\output\\pdf\\HebrewDeepFake_Synthetic_Data_Generation_Report.pdf",
+  "pages": 10,
+  "bytes": 222486,
+  "sha256": "aa0babc1007ab6871d4bbb98a40cb8bb0e9e6814661fca567e3438c6ca042872",
+  "rendered_pages": [
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_01.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_02.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_03.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_04.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_05.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_06.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_07.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_08.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_09.png",
+    "C:\\project_ML\\HebrewDeepFake\\tmp\\pdfs\\page_10.png"
+  ],
+  "expected_pages": 10,
+  "page_text_lengths": [
+    2179,
+    1765,
+    2316,
+    2672,
+    2074,
+    2130,
+    2136,
+    1916,
+    2465,
+    2183
+  ],
+  "no_secret_pattern": true,
+  "notes": "Every rendered page requires visual QA before delivery. Rasterizer fallback: PDFium; Poppler not present.",
+  "visual_review": "All ten pages inspected; final revised pages re-rendered and inspected. No clipping, overflow, missing Hebrew glyphs or broken table headings observed.",
+  "reference_links": 4,
+  "content_spot_checks_passed": true,
+  "source_hashes": {
+    "synthetic_pilot/analysis/sample_features.csv": "20ab4f7a9753af4d5477c4c1f4d94e3c1ea9a7efa8176955bf182d6c3074ac04",
+    "synthetic_pilot/analysis/key_metrics.json": "a8d812c55184f6570ffab01b399ecaaa5476d225b6f9cd4ddcfc7bbf21d316ca",
+    "synthetic_pilot/billing_summary.json": "119811f3d5e2c253a88522a6c427c706a0b55525a853c900fbc236762d94edae",
+    "voice_distribution/key_metrics.json": "b628eb43ca038e4eb64f73086460f464763fdc8d602e149780514c9c3de4c8ca"
+  }
+}

@@ -1,0 +1,9 @@
+# Clustering progress — 2026-11-17
+
+- Fixed scope in `CLUSTERING_PLAN.md`: 196 identity representatives; core nine/all 16 acoustic descriptors, ECAPA and equal-block hybrid; original and capped-edge-trimmed views. No class/provider/demographic metadata in features or k selection.
+- Ran KMeans k=2..10 with support constraints, average linkage, fixed-parameter HDBSCAN, initialization/subsample stability, PCA90/no-capping/boundary sensitivity and clip-level consistency. Saved every partition, transforms, native feature profiles, centroids-near/distant examples and audio references.
+- Original selected k: acoustic core 3, all descriptors 4, ECAPA 2, hybrid 3. ECAPA silhouette low (~0.057) despite strong post-hoc source association. Average-linkage disagreement and HDBSCAN's 89.8% unassigned ECAPA points prevent interpreting that as two established natural voice categories.
+- Acoustic/hybrid partitions changed substantially with boundary preprocessing; ECAPA partition remained relatively similar (ARI ~0.959). No groups removed or labelled as quality failures.
+- Created 20 figures and executed `voice_clustering.ipynb`: nine code cells, zero errors. Labels were improved after visual QA, and figures/notebook regenerated. Detailed interpretation is in `CLUSTERING_REPORT_HE.md`.
+- Verification command: `python verify_clustering.py`; checks data/feature binding, finite matrices, unit ECAPA, balanced hybrid blocks, silhouette/support selection, all identity/clip/method assignments, model-input hashes and notebook errors.
+- User requested publishing important artifacts to the provided GitHub repository during this work. Repository packaging is a separate following step; raw audio, model weights, Python environments and secrets stay out of Git. Original source data and existing PDF are unchanged.

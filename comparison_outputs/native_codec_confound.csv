@@ -1,0 +1,5 @@
+﻿label,native_codec,samples
+real,aac,124
+real,opus,2274
+synthetic,mp3float,194
+synthetic,pcm_s16le,90

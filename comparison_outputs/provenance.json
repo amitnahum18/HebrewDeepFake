@@ -1,0 +1,18 @@
+{
+  "seed": 20261116,
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "input_hashes": {
+    "eda_outputs\\recording_features.csv": "307d35bfae771956403c21ad83413ff246e6d65b1fc9248cc9dfb57621eb8b15",
+    "eda_outputs\\segments.csv": "9efdab84d360093a32eaf91d1856699edf553e0316d3dbffbcf6ceb6762ba44c",
+    "eda_outputs\\segment_quality.csv": "3cf7b658aad21143774353706ac028ca6a2d29b24ce624b38d0e3066a51d9f93",
+    "synthetic_pilot\\analysis\\sample_features.csv": "20ab4f7a9753af4d5477c4c1f4d94e3c1ea9a7efa8176955bf182d6c3074ac04",
+    "synthetic_pilot\\human_reference.csv": "051914777cb1161f9396df04b0abd3bfea024e10723a8880f8779bee2c904b8d",
+    "comparative_analysis.py": "89e9e57cfd49d9c33855a9927ae420df7100167262ab36631d256f5f580f7ce8",
+    "comparative_audio.py": "4fa0fde5e18616ee45a5b3806f4885d398f894d55e7c28d1f2f1c6c305493c6c",
+    "COMPARATIVE_EDA_PLAN.md": "7751e5b6244d383a586b3d881afee9fcb9a54db1033b7f59a041a1962b54ea26"
+  },
+  "no_api_calls": true,
+  "bootstrap_repetitions": 1000,
+  "note": "Reference is a selected 78-speaker short-clip subset, not representative corpus estimates. Spectral masking and fixed absolute energy thresholds are not VAD/SNR. No originals modified."
+}

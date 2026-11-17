@@ -1,0 +1,6 @@
+﻿metric,flagged,denominator,pct
+session_score_lt_0.3,74,2398,3.085904920767306
+segment_score_lt_0.5,3853,54122,7.1191012896788735
+word_probability_lt_0.5,38881,325152,11.95779204802677
+vtt_normalized_mismatch,214,2398,8.924103419516264
+manifest_word_count_mismatch,0,2398,0.0

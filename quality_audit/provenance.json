@@ -1,0 +1,22 @@
+{
+  "inputs": {
+    "eda_outputs\\recording_features.csv": "307d35bfae771956403c21ad83413ff246e6d65b1fc9248cc9dfb57621eb8b15",
+    "eda_outputs\\segments.csv": "9efdab84d360093a32eaf91d1856699edf553e0316d3dbffbcf6ceb6762ba44c",
+    "eda_outputs\\segment_quality.csv": "3cf7b658aad21143774353706ac028ca6a2d29b24ce624b38d0e3066a51d9f93",
+    "synthetic_pilot\\analysis\\sample_features.csv": "20ab4f7a9753af4d5477c4c1f4d94e3c1ea9a7efa8176955bf182d6c3074ac04",
+    "synthetic_pilot\\human_reference.csv": "051914777cb1161f9396df04b0abd3bfea024e10723a8880f8779bee2c904b8d",
+    "comparison_outputs\\proposed_same_text_pairs.csv": "f3eaaa25abd4a749e87e25b3772199529069fe58d2a06ebd023dc2476a3c89ee",
+    "quality_matching_audit.py": "5ffeb2ad6712c079287f31ae5e6240866a79842fe86b631728f12ee17ff9a062"
+  },
+  "normalization": "lowercase Hebrew/Latin/digits, punctuation removed, whitespace collapsed; diacritics removed",
+  "near_text_method": "all session pairs with >=20 source whitespace words; word unigram/bigram TF-IDF sublinear_tf; cosine>=0.92; exclude normalized exact duplicates",
+  "limitations": [
+    "No new human annotations",
+    "No perceptual near-audio duplicate search",
+    "No phonetic near-text matching",
+    "Existing real canonical fingerprints hash decoded PCM; synthetic fingerprints hash WAV bytes, not cross-class comparable",
+    "Source demographic descriptors are not synthetic perceived age/sex",
+    "Listening manifests cover identities, not estimated population prevalence"
+  ],
+  "no_audio_mutations": true
+}

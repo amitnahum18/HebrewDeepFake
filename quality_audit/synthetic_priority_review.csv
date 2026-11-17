@@ -1,0 +1,8 @@
+﻿sample_id,family,model,voice,voice_identity_group,duration_s,rms_dbfs,review_reasons,wav_path
+c639f1a88df9d7edd156,google,google/gemini-3.8-flash-lite-tts,Umbriel,google:Umbriel,8.24,-17.56174989702281,outlier_duration_s,audio\c639f1a88df9d7edd156.wav
+e7a8fbedc6a062df60d6,google,google/gemini-3.8-flash-lite-tts,Schedar,google:Schedar,6.56,-17.091521521435734,outlier_duration_s,audio\e7a8fbedc6a062df60d6.wav
+3fb7fc1fdd4207fc7e59,minimax,minimax/speech-2.8-hd,English_Whispering_girl,minimax:English_Whispering_girl,6.2475,-44.66004087203875,quiet_majority;low_rms;outlier_rms_dbfs;outlier_quiet_fraction_45dbfs,audio\3fb7fc1fdd4207fc7e59.wav
+e9ace176259d73f82dbc,minimax,minimax/speech-2.8-hd,English_FriendlyPerson,minimax:English_FriendlyPerson,5.3475,-36.21104820472011,outlier_rms_dbfs;outlier_quiet_fraction_45dbfs,audio\e9ace176259d73f82dbc.wav
+dce053f31ec083a5643f,minimax,minimax/speech-2.8-hd,English_PatientMan,minimax:English_PatientMan,6.6435,-30.05645468159483,outlier_duration_s,audio\dce053f31ec083a5643f.wav
+e8bdc522071574d928ea,minimax,minimax/speech-2.8-turbo,English_Whispering_girl,minimax:English_Whispering_girl,5.4555,-44.70743629075524,quiet_majority;low_rms;outlier_rms_dbfs;outlier_quiet_fraction_45dbfs,audio\e8bdc522071574d928ea.wav
+4fa56420eb32f99f3eed,minimax,minimax/speech-2.8-turbo,English_FriendlyPerson,minimax:English_FriendlyPerson,4.2675,-36.42656612625439,outlier_rms_dbfs;outlier_quiet_fraction_45dbfs,audio\4fa56420eb32f99f3eed.wav

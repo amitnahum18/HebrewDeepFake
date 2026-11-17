@@ -1,0 +1,5 @@
+# Preserve historical analysis hashes byte-for-byte across platforms.
+* -text
+*.png binary
+*.pdf binary
+*.npz binary

@@ -1,0 +1,17 @@
+{
+  "seed": 20261117,
+  "inputs": {
+    "voice_distribution\\samples.csv": "f021cee8334dc01c63c9755ac0a22f7903386710ecfebf408acce2b47e6c6d3e",
+    "voice_distribution\\embeddings.npz": "a6f945e9c3b2e850fbfce704b4a94a1196d31450a66133d06e6f0dba9b4bee5e",
+    "voice_distribution\\model_provenance.json": "f13f39ceedcb91ec6ecc3d43c7f8bf6894531919cfb6486b4e7951a4e91deaa5",
+    "prepare_voice_distribution.py": "53ce15070bc611581be2cd5a0ed23708b0d88560581decb97272ec624a3fbe61",
+    "ecapa_embeddings.py": "b0d079941d2d0f0649a89282fc5fd5361530bf574ad1871b3f1ce2d39049bd05",
+    "analyze_voice_distributions.py": "ae8e613f67aa26d98488a584227292f6b8fa979fb88981800f17c120436d241e",
+    "VOICE_DISTRIBUTION_PLAN.md": "77f9f250b1d535bd03c4fdd592b6e43c4ba99952868238abf69eb4fcacd931fa"
+  },
+  "mmd": "biased weighted RBF MMD squared; no significance or causal claims",
+  "embedding_centroids": "L2-normalized mean of L2 sample vectors; equal nominal identity weighting",
+  "text_caution": "all synthetic same sentence; real varied content; codec and duration still uncontrolled",
+  "projection_caution": "PCA/t-SNE are visualization only; metrics use original 192 dimensions",
+  "acoustic_scaling": "pooled observed identity median/IQR; not fitted detector or normalization policy"
+}

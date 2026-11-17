@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "initial_audio_cards": 24,
+  "model_filters": 10,
+  "audio_playback_duration_s": 5.48,
+  "human_rating_save": "passed_in_isolated_ephemeral_browser",
+  "rating_export": "passed",
+  "mobile_no_horizontal_overflow": true,
+  "page_errors": [],
+  "test_human_ratings_included_in_dataset": false
+}

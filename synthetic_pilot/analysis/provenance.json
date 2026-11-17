@@ -1,0 +1,52 @@
+{
+  "executed_utc": "2026-11-16T19:56:11.121077+00:00",
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "versions": {
+    "openai": "2.14.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "av": "14.4.0",
+    "nbformat": "5.10.4",
+    "nbclient": "0.8.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2"
+  },
+  "seed": 20261116,
+  "metrics": {
+    "planned_samples": 284,
+    "attempted_samples": 284,
+    "decoded_samples": 284,
+    "models": 10,
+    "families": 4,
+    "provider_voice_groups": 116,
+    "minutes_generated": 22.113516666666666,
+    "technical_qc_pass": 284,
+    "automatic_hebrew_match_pass": 284,
+    "combined_qc_pass": 284,
+    "human_verified_samples": 0,
+    "exact_pcm_duplicate_recordings": 0,
+    "reference_speakers": 78,
+    "review_candidates": 7,
+    "perceptual_presentation_conflicting_groups": 35,
+    "perceptual_age_conflicting_groups": 0,
+    "age_estimator_uninformative": true,
+    "billing": {
+      "checked_utc": "2026-11-16T19:50:06.800093+00:00",
+      "speech_requests_with_cost": 284,
+      "speech_requests_total": 284,
+      "reported_speech_cost_usd": 0.695038,
+      "audio_reviews_with_cost": 284,
+      "reported_review_cost_usd": 0.1301988,
+      "latest_key_usage_delta_usd": 0.8170324,
+      "billing_complete": true,
+      "key_usage_note": "Key usage may lag and fluctuate between cached snapshots; per-request records are preferred.",
+      "reported_request_cost_sum_usd": 0.8252368000000001
+    }
+  },
+  "input_sha256": {
+    "planned_samples.csv": "437c595405a76f31e64856ed390f6567e77f81c9635dfae439f15b76187f9b3c",
+    "manifest.csv": "58ab5430dcfee2bbe72201547b8cd603c3925d9e963dbfbf43d21933cb79205e",
+    "automated_review.json": "0cc57361f4185ada2bb45013c7d2b5ecb5df4247821eaed3930d9d7657ec2f90",
+    "catalog_snapshot.json": "46c964a27225bdd369f08a049773bc83bdfb8295bd45f529efc8025d87106d8e"
+  }
+}

@@ -1,0 +1,11 @@
+﻿model,configurations,reviewed,automatic_hebrew_match,median_transcript_distance
+elevenlabs/eleven-v3,21,21,21,0.1136363636363636
+elevenlabs/eleven-v3-conversational,21,21,21,0.1136363636363636
+elevenlabs/eleven-v4,21,21,21,0.1136363636363636
+elevenlabs/eleven-v4-turbo,21,21,21,0.1136363636363636
+google/gemini-3.1-flash-tts-preview,30,30,30,0.0227272727272727
+google/gemini-3.8-flash-lite-tts,30,30,30,0.0227272727272727
+google/gemini-3.8-flash-tts,30,30,30,0.0227272727272727
+minimax/speech-2.8-hd,45,45,45,0.0227272727272727
+minimax/speech-2.8-turbo,45,45,45,0.1136363636363636
+speechify/simba-3.5,20,20,20,0.0227272727272727

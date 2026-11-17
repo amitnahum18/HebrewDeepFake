@@ -1,0 +1,9 @@
+﻿view,space,selected_k,silhouette,dimensions,support_constraints_met,selection
+original,acoustic_core,3,0.2117876183302593,9,True,maximum eligible full-space silhouette
+original,acoustic_all16,4,0.2242786147120609,16,True,maximum eligible full-space silhouette
+original,ecapa,2,0.05703787878155708,192,True,maximum eligible full-space silhouette
+original,hybrid,3,0.10795377835691825,201,True,maximum eligible full-space silhouette
+edge_trimmed,acoustic_core,2,0.32449874641757,9,True,maximum eligible full-space silhouette
+edge_trimmed,acoustic_all16,2,0.41754371451533867,16,True,maximum eligible full-space silhouette
+edge_trimmed,ecapa,2,0.05944230780005455,192,True,maximum eligible full-space silhouette
+edge_trimmed,hybrid,2,0.178490988940219,201,True,maximum eligible full-space silhouette

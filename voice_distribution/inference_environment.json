@@ -1,0 +1,19 @@
+{
+  "versions": {
+    "torch": "2.8.0+cpu",
+    "torchaudio": "2.8.0+cpu",
+    "speechbrain": "1.1.2",
+    "numpy": "1.26.4",
+    "huggingface-hub": "1.24.0"
+  },
+  "device": "cpu",
+  "torch_threads": 4,
+  "seconds": 423.9801621437073,
+  "embedding_normalization": "L2 after encode, official encode_batch normalize=False equivalent; sentence mean normalization, no classifier or global embedding normalization",
+  "model_state_strict_load": true,
+  "views": [
+    "original",
+    "edge_trimmed"
+  ],
+  "cached_entries_at_start": 0
+}

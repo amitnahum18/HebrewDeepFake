@@ -1,0 +1,12 @@
+Listen to this short synthetic voice clip. Transcribe ONLY words actually audible, in the original language/script. The intended text and voice identity are intentionally withheld. Do not translate or guess missing speech.
+Also describe auditory impressions of the fictional voice, not the speaker's actual biology, identity or real age. Use uncertainty if this short clip does not support a judgment. Never infer ethnicity, nationality, health or identity.
+Return ONLY a JSON object with these fields:
+transcript: string;
+language: Hebrew, English, other, or uncertain;
+speech_intelligibility: number 0 to 1;
+perceived_voice_presentation: masculine, feminine, androgynous, or uncertain;
+presentation_confidence: number 0 to 1 (subjective, not a calibrated probability);
+perceived_age_band: childlike, young_adult_18_29, adult_30_44, mature_45_59, older_60_plus, or uncertain;
+age_confidence: number 0 to 1 (subjective, not a calibrated probability);
+notes: at most 25 words describing uncertainty or pronunciation issues.
+Age ranges are perceptual casting categories, not age estimates of a real person. Do not force binary gender or invent an age. If silence or no intelligible speech, return empty transcript and uncertain categories.

@@ -1,0 +1,8 @@
+{
+  "repo": "speechbrain/spkrec-ecapa-voxceleb",
+  "revision": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+  "files": {
+    "embedding_model.ckpt": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2",
+    "hyperparams.yaml": "6f78854fa04ba59e761437b76a2575d3aba5e5016de3e9b69f0c9a5077fb1a41"
+  }
+}

@@ -1,0 +1,5 @@
+﻿session_threshold,alignment_threshold,prototype_lengths,segments,speakers,aligned_hours
+0.3,0.5,False,50103,83,35.33839388888889
+0.3,0.5,True,27445,83,26.07454388888889
+0.8,0.8,False,38517,81,28.667968888888886
+0.8,0.8,True,23192,81,22.090629999999997
