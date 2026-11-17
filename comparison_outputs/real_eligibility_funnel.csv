@@ -1,0 +1,7 @@
+﻿step,segments,removed_at_step,speakers,sessions,aligned_hours
+all aligned rows,54122,0,85,2398,36.464261666666665
+source decoded and nonzero,53874,248,85,2376,36.4569813888889
+positive valid in-bounds timing,52672,1202,84,2360,36.43479333333333
+nonempty transcript,52657,15,84,2359,36.431982222222224
+session score >= 0.3,52042,615,83,2322,36.094184166666665
+segment alignment score >= 0.5,50103,1939,83,2318,35.33839388888889

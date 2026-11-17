@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-11-16T19:34:57.873261+00:00",
+  "status": "generation_attempts_complete",
+  "prompt": "היום ניפגש בשעה שלוש ליד תחנת הרכבת בירושלים.",
+  "target_language": "he",
+  "requested_samples": 284,
+  "voice_identity_groups": 116,
+  "scope": "one short utterance per stock model/voice; no volume expansion",
+  "project_budget_usd": 20,
+  "normal_spend_stop_usd": 18,
+  "uncommitted_request_allowance_usd": 0.1,
+  "demographic_policy": "provider labels and perceived audio-model estimates remain separate; no actual age or biological sex inferred",
+  "automatic_retries": 0,
+  "voice_cloning": false,
+  "generation_finished_utc": "2026-11-16T19:41:23.752470+00:00"
+}

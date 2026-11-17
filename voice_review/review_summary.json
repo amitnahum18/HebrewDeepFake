@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "reviewed_excerpts": 14,
+  "distinct_recorder_ids": 14,
+  "labels": {
+    "masculine": 11,
+    "feminine": 3
+  },
+  "annotation_provenance": "human_auditory_impression",
+  "annotation_scope": "reviewed_excerpt_only",
+  "source_biological_sex_unchanged": true,
+  "labels_propagated_to_unheard_recordings": false
+}

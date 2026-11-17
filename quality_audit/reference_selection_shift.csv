@@ -1,0 +1,17 @@
+﻿field,weight,comparison,total_variation_vs_full,interpretation
+sex_label,time_share,eligible_real_segments_aligned_seconds,0.004719047226026417,descriptive selection shift; full corpus is not population truth
+sex_label,time_share,full_real_recordings_decoded_seconds,0.0,descriptive selection shift; full corpus is not population truth
+sex_label,time_share,proposed_real_pairs_segment_seconds,0.07876998967155777,descriptive selection shift; full corpus is not population truth
+sex_label,time_share,selected_real_reference_seconds,0.06252020939855105,descriptive selection shift; full corpus is not population truth
+sex_label,speaker_share,eligible_real_segments_aligned_seconds,0.011055988660524416,descriptive selection shift; full corpus is not population truth
+sex_label,speaker_share,full_real_recordings_decoded_seconds,0.0,descriptive selection shift; full corpus is not population truth
+sex_label,speaker_share,proposed_real_pairs_segment_seconds,0.014524328249818405,descriptive selection shift; full corpus is not population truth
+sex_label,speaker_share,selected_real_reference_seconds,0.02639517345399696,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,time_share,eligible_real_segments_aligned_seconds,0.022136281370402612,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,time_share,full_real_recordings_decoded_seconds,0.0,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,time_share,proposed_real_pairs_segment_seconds,0.12990208004277617,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,time_share,selected_real_reference_seconds,0.12213601237453228,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,speaker_share,eligible_real_segments_aligned_seconds,0.015591778880226776,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,speaker_share,full_real_recordings_decoded_seconds,0.0,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,speaker_share,proposed_real_pairs_segment_seconds,0.021205519244734905,descriptive selection shift; full corpus is not population truth
+age_proxy_bin,speaker_share,selected_real_reference_seconds,0.01990950226244343,descriptive selection shift; full corpus is not population truth

@@ -1,0 +1,32 @@
+# Credentials and local environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python cache and local environments
+__pycache__/
+*.py[cod]
+.venv/
+.venv-ecapa/
+.pdf_deps/
+.repo_publish/
+tmp/
+*.wav
+*.mp3
+*.pcm
+*.mka
+*.flac
+*.ogg
+*.ckpt
+*.pt
+*.pth
+voice_distribution/model/
+voice_distribution/real_audio/
+
+# API response artifacts
+openrouter_outputs/
+synthetic_pilot/budget.json
+synthetic_pilot/audio/
+synthetic_pilot/human_reference_audio/

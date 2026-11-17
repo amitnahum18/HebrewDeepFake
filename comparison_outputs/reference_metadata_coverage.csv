@@ -1,0 +1,16 @@
+﻿sex_label,age_proxy_bin,reference_excerpts
+female,0-17,1
+female,18-29,4
+female,30-39,6
+female,40-49,4
+female,50-59,5
+female,60-69,1
+female,unknown,4
+male,18-29,2
+male,30-39,16
+male,40-49,8
+male,50-59,5
+male,60-69,3
+male,unknown,7
+unknown,18-29,1
+unknown,unknown,11

@@ -1,0 +1,18 @@
+{
+  "original_real_same_identity_pair_auc": 0.9967155605923717,
+  "original_real_cross_session_pair_auc": 0.9963181973499373,
+  "real_cross_session_positive_pairs": 200,
+  "real_cross_session_supported_speakers": 69,
+  "original_synthetic_same_identity_pair_auc": 0.9895003322801134,
+  "pca_2d_variance_fraction": 0.1244005411863327,
+  "edge_trimmed_real_same_identity_pair_auc": 0.9967263121714259,
+  "edge_trimmed_real_cross_session_pair_auc": 0.9963311059645393,
+  "edge_trimmed_synthetic_same_identity_pair_auc": 0.9885187984175309,
+  "real_clips": 231,
+  "synthetic_clips": 284,
+  "real_speakers": 80,
+  "synthetic_nominal_voices": 116,
+  "embedding_dimensions": 192,
+  "views": 2,
+  "api_calls": 0
+}

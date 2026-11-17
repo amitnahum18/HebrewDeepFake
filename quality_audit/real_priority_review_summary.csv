@@ -1,0 +1,6 @@
+﻿reason,sessions,speakers
+duration_difference_over_0.5s_review,34,10
+hebrew_letter_fraction_below_0.8_review,18,9
+quiet_majority_absolute_energy_review,121,27
+source_alignment_score_below_0.3,74,24
+zero_audio,22,7

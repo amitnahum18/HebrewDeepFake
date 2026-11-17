@@ -1,0 +1,16 @@
+{
+  "executed_code_cells": 12,
+  "notebook_errors": 0,
+  "recordings": 2398,
+  "speakers": 85,
+  "source_files_hashed": 9597,
+  "csv_tables": 40,
+  "figures": 8,
+  "status": "passed",
+  "implementation_sha256": {
+    "audio_eda.py": "7f4e84fd8098fe06ab80e6dbbbe3aa85b455b7cb42573b59f4cad822623a73b1",
+    "build_eda_notebook.py": "0f21fdce58342f97073860c972024358fe96cc649ef56dce0b19e1777d10b3fb",
+    "execute_eda.py": "a47103b3eacb9d2abb6f16accbdfc4b9b8f22f747dc603ca311a69d0d5e6b063",
+    "verify_eda.py": "6cb101fc34f5fccc3dd2aaf9c22dbe9d6bf50c6333d8c3f55706790151818c09"
+  }
+}

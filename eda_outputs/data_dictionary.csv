@@ -1,0 +1,19 @@
+﻿field,dtype,missing,missing_pct,unique_nonmissing,units,meaning
+source_type,object,0,0.0,1,category,Source collection type
+source_id,object,0,0.0,1,identifier,Source collection identifier
+source_entry_id,object,0,0.0,2398,identifier,Source recording identifier
+session_id,object,0,0.0,2398,identifier,Recording session identifier
+session_duration,float64,0,0.0,2239,seconds,Reported complete recording duration
+user_id,object,0,0.0,85,identifier,Opaque recorder identifier; speaker grouping proxy
+document_language,object,0,0.0,1,language code,Source document language
+document_title,object,0,0.0,449,text,Source document title
+document_source_type,object,0,0.0,3,category,Source document origin
+year_of_birth,float64,349,14.553794829024186,36,calendar year,"Reported birth year, if supplied"
+biological_sex,object,131,5.462885738115096,3,source category,Reported source sex label; not gender identity
+quality_score,float64,0,0.0,1263,0-1,Provider text/audio alignment quality; not acoustic quality
+min_segment_quality_score,float64,0,0.0,1898,0-1,Minimum provider segment alignment score
+avg_words_per_segment,float64,0,0.0,890,words/segment,Reported average aligned words per segment
+avg_segment_duration,float64,0,0.0,1824,seconds,Reported average aligned segment duration
+avg_words_per_minute,float64,0,0.0,2328,words/minute,Reported recording word rate
+segments_count,int64,0,0.0,151,count,Reported aligned segment count
+words_count,int64,0,0.0,504,count,Reported word count

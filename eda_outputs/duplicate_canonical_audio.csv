@@ -1,0 +1,1 @@
+﻿session_id,decode_error,codec,sample_rate,channels,decoded_duration_s,peak,rms_dbfs,dc_offset,near_fullscale_fraction,nonfinite_samples,low_energy_p10_dbfs,high_energy_p90_dbfs,energy_dynamic_range_db,crest_factor_db,pcm16_16k_mono_sha256,quiet_fraction_50dbfs,quiet_fraction_45dbfs,quiet_fraction_40dbfs

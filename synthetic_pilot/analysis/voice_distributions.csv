@@ -1,0 +1,16 @@
+﻿unit,field,category,count,denominator,pct
+model_voice_configurations,presentation_for_summary,masculine,212,284,74.64788732394366
+model_voice_configurations,presentation_for_summary,feminine,72,284,25.35211267605634
+model_voice_configurations,age_for_summary,uniform_estimator_not_validated,284,284,100.0
+provider_voice_groups,perceived_presentation,masculine,67,116,57.758620689655174
+provider_voice_groups,perceived_presentation,conflicting_across_models,35,116,30.17241379310345
+provider_voice_groups,perceived_presentation,feminine,14,116,12.068965517241379
+provider_voice_groups,perceived_age_band,uniform_estimator_not_validated,116,116,100.0
+provider_voice_groups,provider_gender_label,unknown,95,116,81.89655172413794
+provider_voice_groups,provider_gender_label,male,13,116,11.206896551724139
+provider_voice_groups,provider_gender_label,female,7,116,6.0344827586206895
+provider_voice_groups,provider_gender_label,neutral,1,116,0.8620689655172413
+provider_voice_groups,provider_age_label,unknown,95,116,81.89655172413794
+provider_voice_groups,provider_age_label,middle_aged,13,116,11.206896551724139
+provider_voice_groups,provider_age_label,young,7,116,6.0344827586206895
+provider_voice_groups,provider_age_label,old,1,116,0.8620689655172413

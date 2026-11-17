@@ -1,0 +1,26 @@
+{
+  "exact_real_segment_text_matches": 0,
+  "real_recordings": 2398,
+  "real_speakers": 85,
+  "real_hours": 50.47381625724365,
+  "real_reference_speakers": 78,
+  "synthetic_configurations": 284,
+  "synthetic_nominal_voices": 116,
+  "synthetic_minutes": 22.113516666666666,
+  "synthetic_unique_texts": 1,
+  "synthetic_human_verified": 0,
+  "synthetic_age_raw_categories": 1,
+  "synthetic_review_candidates": 7,
+  "native_codec_overlap": [],
+  "diagnostic_pairs": 44,
+  "diagnostic_pairs_per_family": {
+    "elevenlabs": 11,
+    "google": 11,
+    "minimax": 11,
+    "speechify": 11
+  },
+  "proposal_pairs": 308,
+  "proposal_real_speakers": 81,
+  "proposal_real_seconds": 1025.9200000000003,
+  "eligible_segments": 50103
+}

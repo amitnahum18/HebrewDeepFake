@@ -1,0 +1,15 @@
+﻿view,space,kind,dimensions,ari
+original,acoustic_core,PCA90_same_k,5,0.9849479142109693
+original,acoustic_core,no_cap_same_k,9,1.0
+original,acoustic_all16,PCA90_same_k,6,0.9723138963454675
+original,acoustic_all16,no_cap_same_k,16,0.9867169967926822
+original,ecapa,PCA90_same_k,78,1.0
+original,hybrid,PCA90_same_k,57,0.9464350392978494
+original,hybrid,no_cap_same_k,201,1.0
+edge_trimmed,acoustic_core,PCA90_same_k,5,0.9769088558344108
+edge_trimmed,acoustic_core,no_cap_same_k,9,0.45461284340025343
+edge_trimmed,acoustic_all16,PCA90_same_k,6,1.0
+edge_trimmed,acoustic_all16,no_cap_same_k,16,0.41276292173316137
+edge_trimmed,ecapa,PCA90_same_k,78,0.979583689712714
+edge_trimmed,hybrid,PCA90_same_k,58,1.0
+edge_trimmed,hybrid,no_cap_same_k,201,0.4695118950585406

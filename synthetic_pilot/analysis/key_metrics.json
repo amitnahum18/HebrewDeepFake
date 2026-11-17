@@ -1,0 +1,31 @@
+{
+  "planned_samples": 284,
+  "attempted_samples": 284,
+  "decoded_samples": 284,
+  "models": 10,
+  "families": 4,
+  "provider_voice_groups": 116,
+  "minutes_generated": 22.113516666666666,
+  "technical_qc_pass": 284,
+  "automatic_hebrew_match_pass": 284,
+  "combined_qc_pass": 284,
+  "human_verified_samples": 0,
+  "exact_pcm_duplicate_recordings": 0,
+  "reference_speakers": 78,
+  "review_candidates": 7,
+  "perceptual_presentation_conflicting_groups": 35,
+  "perceptual_age_conflicting_groups": 0,
+  "age_estimator_uninformative": true,
+  "billing": {
+    "checked_utc": "2026-11-16T19:50:06.800093+00:00",
+    "speech_requests_with_cost": 284,
+    "speech_requests_total": 284,
+    "reported_speech_cost_usd": 0.695038,
+    "audio_reviews_with_cost": 284,
+    "reported_review_cost_usd": 0.1301988,
+    "latest_key_usage_delta_usd": 0.8170324,
+    "billing_complete": true,
+    "key_usage_note": "Key usage may lag and fluctuate between cached snapshots; per-request records are preferred.",
+    "reported_request_cost_sum_usd": 0.8252368000000001
+  }
+}

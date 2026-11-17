@@ -1,0 +1,18 @@
+{
+  "real_segment_repeated_text_groups": 1151,
+  "real_segment_rows_in_repeated_groups": 3657,
+  "real_segment_excess_rows_over_one_per_text": 2506,
+  "eligible_sixplus_word_repeated_groups": 259,
+  "eligible_sixplus_word_repeated_rows": 615,
+  "eligible_sixplus_word_cross_speaker_groups": 145,
+  "real_session_repeated_text_groups": 12,
+  "real_session_rows_in_repeated_groups": 45,
+  "near_session_text_candidate_pairs": 12,
+  "synthetic_same_text_rows": 284,
+  "synthetic_unique_texts": 1,
+  "synthetic_voice_groups": 116,
+  "real_identity_listening_rows": 85,
+  "synthetic_identity_listening_rows": 116,
+  "saved_362_audio_pcm_duplicate_rows": 0,
+  "api_calls": 0
+}

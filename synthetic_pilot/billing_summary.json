@@ -1,0 +1,12 @@
+{
+  "checked_utc": "2026-11-16T19:50:06.800093+00:00",
+  "speech_requests_with_cost": 284,
+  "speech_requests_total": 284,
+  "reported_speech_cost_usd": 0.695038,
+  "audio_reviews_with_cost": 284,
+  "reported_review_cost_usd": 0.1301988,
+  "latest_key_usage_delta_usd": 0.8170324,
+  "billing_complete": true,
+  "key_usage_note": "Key usage may lag and fluctuate between cached snapshots; per-request records are preferred.",
+  "reported_request_cost_sum_usd": 0.8252368000000001
+}

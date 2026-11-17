@@ -1,0 +1,8 @@
+﻿sample_id,model,voice,duration_s,rms_dbfs,quiet_fraction_45dbfs,review_reasons
+c639f1a88df9d7edd156,google/gemini-3.8-flash-lite-tts,Umbriel,8.24,-17.56174989702281,0.3228155339805825,outlier_duration_s
+e7a8fbedc6a062df60d6,google/gemini-3.8-flash-lite-tts,Schedar,6.56,-17.091521521435734,0.2469512195121951,outlier_duration_s
+3fb7fc1fdd4207fc7e59,minimax/speech-2.8-hd,English_Whispering_girl,6.2475,-44.66004087203875,0.6153846153846154,quiet_majority;low_rms;outlier_rms_dbfs;outlier_quiet_fraction_45dbfs
+e9ace176259d73f82dbc,minimax/speech-2.8-hd,English_FriendlyPerson,5.3475,-36.21104820472011,0.4606741573033708,outlier_rms_dbfs;outlier_quiet_fraction_45dbfs
+dce053f31ec083a5643f,minimax/speech-2.8-hd,English_PatientMan,6.6435,-30.05645468159483,0.2319277108433735,outlier_duration_s
+e8bdc522071574d928ea,minimax/speech-2.8-turbo,English_Whispering_girl,5.4555,-44.70743629075524,0.5551470588235294,quiet_majority;low_rms;outlier_rms_dbfs;outlier_quiet_fraction_45dbfs
+4fa56420eb32f99f3eed,minimax/speech-2.8-turbo,English_FriendlyPerson,4.2675,-36.42656612625439,0.4178403755868544,outlier_rms_dbfs;outlier_quiet_fraction_45dbfs

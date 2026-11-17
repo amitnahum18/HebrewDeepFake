@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "samples": 284,
+  "models": 10,
+  "nominal_voice_groups": 116,
+  "automated_hebrew_checks_passed": 284,
+  "executed_notebook_code_cells": 6,
+  "notebook_errors": 0,
+  "csv_tables": 16,
+  "figures": 8,
+  "reported_cost_usd": 0.8252368000000001,
+  "age_estimates_rejected_as_uninformative": true,
+  "human_demographic_verification": "pending",
+  "credential_scan": "passed"
+}
