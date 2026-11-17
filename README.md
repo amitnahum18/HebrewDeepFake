@@ -14,6 +14,8 @@ Synthetic stock voices are not clones of the real speakers. Shared provider:voic
 
 ## Start with these results
 
+- [Playable six-pair-per-group listening comparison](similar_voice_pairs/listen_portable.html): A = acoustic + ECAPA, B = acoustic, C = ECAPA, plus six consensus pairs. Relative A/B/C match scores are shown for every pair and summarized per group. Download the HTML from GitHub and open it in a regular browser; the selected audio and plots are embedded, so no separate audio folder is needed. GitHub's source preview is not the player.
+- [Listening-pair selection and score definitions](similar_voice_pairs/README_HE.md): six distinct real IDs and synthetic voices per group, same eight-word/0.5-second controls, relative rank scores rather than human quality ratings.
 - [Professional English PDF summary](output/pdf/HebrewDeepFake_Synthetic_Data_Generation_Report.pdf): models, file inventory, metadata, generation, quality and imbalance handling.
 - [Clustering report in Hebrew](CLUSTERING_REPORT_HE.md): acoustic-only, ECAPA and hybrid analysis, limitations and 20 plots.
 - [Multi-method voice distribution report](VOICE_DISTRIBUTIONS_REPORT_HE.md).
@@ -82,4 +84,4 @@ Next: validate real source cuts and create same-Hebrew-text real/synthetic pairs
 
 Primary methodology references are linked in the reports and notebooks: ECAPA-TDNN (Interspeech 2020), ASVspoof 2021, shortcut research (CVPR 2025), and official scikit-learn documentation. All project result numbers come from local manifests and analyses, not paper benchmark scores. Versions, seeds, parameter settings and input hashes are recorded beside the outputs.
 
-The existing repository [LICENSE](LICENSE) is retained. External datasets, model weights and provider materials have their own source terms; this repository does not include the raw audio or downloaded model weights.
+The existing repository [LICENSE](LICENSE) is retained. External datasets, model weights and provider materials have their own source terms. Standalone audio/model weights are excluded; the explicitly requested portable listening page embeds only its selected real/synthetic excerpts, as documented in the snapshot manifest and data policy.

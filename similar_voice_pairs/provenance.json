@@ -1,0 +1,13 @@
+{
+  "inputs": {
+    "voice_distribution\\samples.csv": "f021cee8334dc01c63c9755ac0a22f7903386710ecfebf408acce2b47e6c6d3e",
+    "voice_distribution\\sample_acoustic_features.csv": "bcedfe48f0bf49016df511f870d3210496420039a19f56aca8b269f584f90c45",
+    "voice_distribution\\embeddings.npz": "a6f945e9c3b2e850fbfce704b4a94a1196d31450a66133d06e6f0dba9b4bee5e",
+    "cluster_voice_features.py": "fe43789b238781810f041e164b5c84a8c45c981d0aa21a5ca11c0ed18e3ef20b",
+    "select_similar_voice_pairs.py": "d9c2043af8daec21b1a79233fd4081bd0b59fc8f4c538b1ff90503896c3f346c"
+  },
+  "acoustic_scaler": "identity-fitted original core acoustic transform from clustering; no class labels in fit",
+  "ecapa": "original per-clip L2 vectors; cosine distance",
+  "hybrid": "Euclidean on equal-expected-energy acoustic+ECAPA blocks, using identity-fitted block scale",
+  "human_similarity_not_yet_rated": true
+}
