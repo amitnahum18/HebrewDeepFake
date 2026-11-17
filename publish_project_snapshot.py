@@ -39,7 +39,7 @@ for p in (ROOT/'output/pdf').iterdir():
 # One self-contained page embeds only selected excerpts; do not duplicate it or
 # upload the entire WAV folder/full pairwise matrix/temporary extracted JS.
 pair_root=ROOT/'similar_voice_pairs'
-pair_names={'listen_portable.html','README_HE.md','selected_pairs.csv','controlled_candidate_pairs.csv','uncontrolled_selection_reference.csv','audio_assets.json','gallery_data.json','key_metrics.json','provenance.json','verification.json','browser_verification.json','browser_desktop.png','browser_mobile.png','human_pair_feedback.json','matching_audit.csv','MATCHING_AUDIT_HE.md'}
+pair_names={'listen_portable.html','README_HE.md','selected_pairs.csv','controlled_candidate_pairs.csv','uncontrolled_selection_reference.csv','audio_assets.json','gallery_data.json','key_metrics.json','provenance.json','verification.json','browser_verification.json','browser_desktop.png','browser_mobile.png','human_pair_feedback.json','matching_audit.csv','MATCHING_AUDIT_HE.md','selection_before_metadata_filter.csv'}
 for p in pair_root.rglob('*'):
     if not p.is_file():continue
     rel=p.relative_to(pair_root)

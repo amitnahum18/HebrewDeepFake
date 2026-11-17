@@ -16,6 +16,8 @@ Synthetic stock voices are not clones of the real speakers. Shared provider:voic
 
 - [Playable six-pair-per-group listening comparison](similar_voice_pairs/listen_portable.html): A = acoustic + ECAPA, B = acoustic, C = ECAPA, plus six consensus pairs. Relative A/B/C match scores are shown for every pair and summarized per group. Download the HTML from GitHub and open it in a regular browser; the selected audio and plots are embedded, so no separate audio folder is needed. GitHub's source preview is not the player.
 - [Listening-pair selection and score definitions](similar_voice_pairs/README_HE.md): six distinct real IDs and synthetic voices per group, same eight-word/0.5-second controls, relative rank scores rather than human quality ratings.
+
+The updated listening gallery requires matching real-source sex and provider voice-gender labels, plus the same experimental broad age group. The age mapping is an explicit working assumption (young: 18–39, middle_aged: 40–59, old: 60+), not a verified numerical age gap or perceived-age judgment. Unknown/neutral labels and previously human-rejected pairs are excluded. Only ElevenLabs currently has both provider fields, so this filtered comparison covers one provider. Scores are recomputed within 258 eligible candidate pairs. The previous selection is retained in `similar_voice_pairs/selection_before_metadata_filter.csv`.
 - [Professional English PDF summary](output/pdf/HebrewDeepFake_Synthetic_Data_Generation_Report.pdf): models, file inventory, metadata, generation, quality and imbalance handling.
 - [Clustering report in Hebrew](CLUSTERING_REPORT_HE.md): acoustic-only, ECAPA and hybrid analysis, limitations and 20 plots.
 - [Multi-method voice distribution report](VOICE_DISTRIBUTIONS_REPORT_HE.md).

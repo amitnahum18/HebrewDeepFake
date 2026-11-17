@@ -1,19 +1,32 @@
 {
   "all_cross_class_pairs": 65604,
-  "controlled_candidate_pairs": 5308,
-  "eligible_real_clips": 32,
-  "eligible_real_speakers": 26,
-  "eligible_synthetic_clips": 241,
-  "eligible_synthetic_groups": 112,
+  "controlled_candidate_pairs": 258,
+  "eligible_real_clips": 18,
+  "eligible_real_speakers": 15,
+  "eligible_synthetic_clips": 74,
+  "eligible_synthetic_groups": 20,
   "pairs_per_group": 6,
   "method_selections": 18,
   "additional_consensus_selections": 6,
-  "unique_selected_pairs": 21,
-  "distinct_selected_original_recordings": 33,
-  "selection_controls": "exactly 8 aligned/whitespace words; duration gap <=0.5 s; six distinct real IDs and nominal synthetic groups per method; max 3 pairs per family; certified maximum sum of relative match scores (minimum sum of percentile ranks)",
-  "score_definition": "100*(1-percentile rank within the common controlled pool); higher is closer, not a human quality or identity probability",
+  "unique_selected_pairs": 17,
+  "distinct_selected_original_recordings": 27,
+  "selection_controls": "8 words per side; duration gap <=0.5s; source sex label equals provider voice gender label; same experimental broad age category; 6 distinct real IDs and synthetic voice groups; single-provider coverage; human-rejected pair IDs excluded",
+  "score_definition": "100*(1-percentile rank within the metadata-eligible controlled pool); not calibrated human similarity",
   "not_text_matched": true,
   "api_calls": 0,
   "new_audio_generated": false,
-  "word_count_caution": "Real aligned word count and synthetic whitespace words use existing source definitions; boundary/transcript validation remains pending."
+  "word_count_caution": "Real aligned word count and synthetic whitespace words use existing source definitions; boundary/transcript validation remains pending.",
+  "metadata_matching_policy": "broad",
+  "duration_word_candidate_pairs_before_metadata": 5308,
+  "family_cap_per_group": 6,
+  "available_families": [
+    "elevenlabs"
+  ],
+  "source_gender_match_required": true,
+  "age_policy": {
+    "young": "18-39",
+    "middle_aged": "40-59",
+    "old": "60+; only existing source bins"
+  },
+  "age_policy_caution": "Experimental mapping of provider descriptors; real age is source proxy, not verified age at recording. No numerical age-gap claim."
 }

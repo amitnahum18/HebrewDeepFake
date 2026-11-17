@@ -4,6 +4,7 @@ import json,shutil,hashlib
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parent;OUT=ROOT/'similar_voice_pairs';TEST=ROOT/'tmp/voice_pair_portable_test'
+metadata_match=bool(json.loads((OUT/'key_metrics.json').read_text()).get('metadata_matching_policy'))
 TEST.mkdir(parents=True,exist_ok=True)
 standalone=TEST/'listen_only.html';shutil.copy2(OUT/'listen_portable.html',standalone)
 with sync_playwright() as p:
@@ -25,7 +26,11 @@ with sync_playwright() as p:
             assert page.locator('.card').count()==6
             assert page.locator('#cards .score-box').count()==18
             assert page.locator('#group-summary .score-box').count()==3
-            if method=='hybrid':
+            if metadata_match:
+                assert page.locator('[data-metadata-eligible="true"]').count()==6
+                assert page.locator('[data-review-status="human_reported_mismatch"]').count()==0
+                assert 'לא גיל מאומת' in page.locator('.card').first.inner_text()
+            elif method=='hybrid':
                 assert page.locator('[data-review-status="human_reported_mismatch"]').count()==2
                 assert 'ילדה' in page.locator('.card').nth(3).inner_text()
                 assert 'גברית' in page.locator('.card').nth(4).inner_text()

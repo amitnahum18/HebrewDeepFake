@@ -17,7 +17,7 @@ ROOT=Path(__file__).resolve().parent;BASE=ROOT/'voice_distribution';OUT=ROOT/'si
 METHODS=['acoustic','ecapa','hybrid']
 PAIRS_PER_METHOD=6
 
-def choose_six(df,score):
+def choose_six(df,score,family_cap=3):
     # Within a real-ID/synthetic-ID edge, only the cheapest clip configuration
     # can improve this objective; remove dominated alternatives before solving.
     g=df.sort_values([score,'pair_id']).drop_duplicates(['real_group','synthetic_group']).reset_index(drop=True)
@@ -28,12 +28,12 @@ def choose_six(df,score):
     for j,r in enumerate(g.itertuples()):
         a[ri[r.real_group],j]=1;a[nr+si[r.synthetic_group],j]=1;a[nr+ns+fi[r.family],j]=1;a[-1,j]=1
     lo=np.r_[np.zeros(nr+ns+nf),PAIRS_PER_METHOD]
-    hi=np.r_[np.ones(nr+ns),np.full(nf,3),PAIRS_PER_METHOD]
+    hi=np.r_[np.ones(nr+ns),np.full(nf,family_cap),PAIRS_PER_METHOD]
     result=milp(g[score].to_numpy(),integrality=np.ones(len(g)),bounds=Bounds(0,1),constraints=LinearConstraint(a.tocsr(),lo,hi),options={'time_limit':90})
     if not result.success:raise ValueError('Six-pair optimum not certified: '+result.message)
     chosen=g.loc[result.x>.5].sort_values([score,'pair_id']).copy()
     assert len(chosen)==6 and chosen.real_group.nunique()==6 and chosen.synthetic_group.nunique()==6
-    assert chosen.family.value_counts().max()<=3
+    assert chosen.family.value_counts().max()<=family_cap
     return chosen
 
 def choose_two(df,score):
@@ -54,7 +54,7 @@ def wav_write(path,x):
         stream.setparams((1,2,16000,0,'NONE','not compressed'))
         stream.writeframes(np.round(np.clip(x,-1,32767/32768)*32768).astype('<i2').tobytes())
 
-def main():
+def main(metadata_policy=None):
     OUT.mkdir(exist_ok=True);(OUT/'audio').mkdir(exist_ok=True);(OUT/'metadata').mkdir(exist_ok=True)
     samples=pd.read_csv(BASE/'samples.csv',keep_default_na=False)
     acoustics=pd.read_csv(BASE/'sample_acoustic_features.csv')
@@ -77,12 +77,19 @@ def main():
             rows.append(dict(pair_id=r.sample_id+'__'+s.sample_id,real_sample=r.sample_id,synthetic_sample=s.sample_id,real_group=r.group_id,synthetic_group=s.group_id,family=s.family,model=s.model,voice=s.voice,real_words=int(r.word_count),synthetic_words=int(s.word_count),real_duration_s=r.duration_s,synthetic_duration_s=s.duration_s,duration_gap_s=abs(r.duration_s-s.duration_s),text_matched=bool(r.text==s.text),**{m+'_distance':float(d[i,j]) for m,d in distances.items()}))
     all_pairs=pd.DataFrame(rows)
     controlled=all_pairs.loc[all_pairs.real_words.eq(8)&all_pairs.synthetic_words.eq(8)&all_pairs.duration_gap_s.le(.5)].copy()
+    duration_word_pool_count=len(controlled)
+    if metadata_policy:
+        from metadata_pair_constraints import eligible_pool
+        controlled=eligible_pool(controlled,metadata_policy)
+        if controlled.real_group.nunique()<6 or controlled.synthetic_group.nunique()<6:
+            raise ValueError('Insufficient labelled pairs for six-per-group matching; no selection output overwritten.')
+    family_cap=6 if metadata_policy else 3
     for m in METHODS:controlled[m+'_percentile']=controlled[m+'_distance'].rank(method='average',pct=True)
     controlled['consensus_max_percentile']=controlled[[m+'_percentile' for m in METHODS]].max(axis=1)
     selected=[]
     for method in METHODS+['consensus']:
         score=method+'_percentile' if method!='consensus' else 'consensus_max_percentile'
-        chosen=choose_six(controlled,score)
+        chosen=choose_six(controlled,score,family_cap=family_cap)
         for rank,r in enumerate(chosen.to_dict('records'),1):
             percentile=r[method+'_percentile'] if method!='consensus' else r['consensus_max_percentile']
             selected.append({'selection_method':method,'within_method_rank':rank,'relative_match_score':100*(1-percentile),**r})
@@ -110,9 +117,27 @@ def main():
         data={**r,'real':assets[r['real_sample']],'synthetic':assets[r['synthetic_sample']],'limits':['Different Hebrew texts: not content-matched or cloned speaker identity.','Relative match score = 100*(1-method percentile), not human quality or identity probability.','Six selected pairs are an illustration, not a statistically valid method-quality comparison.','Audio has not received new human verification.']}
         (OUT/'metadata'/(r['selection_method']+'_'+str(r['within_method_rank'])+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
     metrics={'all_cross_class_pairs':len(all_pairs),'controlled_candidate_pairs':len(controlled),'eligible_real_clips':controlled.real_sample.nunique(),'eligible_real_speakers':controlled.real_group.nunique(),'eligible_synthetic_clips':controlled.synthetic_sample.nunique(),'eligible_synthetic_groups':controlled.synthetic_group.nunique(),'pairs_per_group':6,'method_selections':18,'additional_consensus_selections':6,'unique_selected_pairs':selected.pair_id.nunique(),'distinct_selected_original_recordings':len(assets),'selection_controls':'exactly 8 aligned/whitespace words; duration gap <=0.5 s; six distinct real IDs and nominal synthetic groups per method; max 3 pairs per family; certified maximum sum of relative match scores (minimum sum of percentile ranks)','score_definition':'100*(1-percentile rank within the common controlled pool); higher is closer, not a human quality or identity probability','not_text_matched':not selected.text_matched.any(),'api_calls':0,'new_audio_generated':False,'word_count_caution':'Real aligned word count and synthetic whitespace words use existing source definitions; boundary/transcript validation remains pending.'}
+    if metadata_policy:
+        metrics.update(metadata_matching_policy=metadata_policy,
+            duration_word_candidate_pairs_before_metadata=duration_word_pool_count,
+            family_cap_per_group=family_cap,
+            available_families=sorted(controlled.family.unique().tolist()),
+            source_gender_match_required=True,
+            age_policy={'young':'18-39','middle_aged':'40-59','old':'60+; only existing source bins'},
+            age_policy_caution='Experimental mapping of provider descriptors; real age is source proxy, not verified age at recording. No numerical age-gap claim.',
+            selection_controls='8 words per side; duration gap <=0.5s; source sex label equals provider voice gender label; same experimental broad age category; 6 distinct real IDs and synthetic voice groups; single-provider coverage; human-rejected pair IDs excluded',
+            score_definition='100*(1-percentile rank within the metadata-eligible controlled pool); not calibrated human similarity')
     (OUT/'key_metrics.json').write_text(json.dumps(metrics,ensure_ascii=False,indent=2),encoding='utf-8')
     provenance={'inputs':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [BASE/'samples.csv',BASE/'sample_acoustic_features.csv',BASE/'embeddings.npz',ROOT/'cluster_voice_features.py',Path(__file__)]},'acoustic_scaler':'identity-fitted original core acoustic transform from clustering; no class labels in fit','ecapa':'original per-clip L2 vectors; cosine distance','hybrid':'Euclidean on equal-expected-energy acoustic+ECAPA blocks, using identity-fitted block scale','human_similarity_not_yet_rated':True}
+    if metadata_policy:
+        for p in [ROOT/'metadata_pair_constraints.py',ROOT/'synthetic_pilot/manifest.csv',OUT/'human_pair_feedback.json']:
+            provenance['inputs'][str(p.relative_to(ROOT))]=hashlib.sha256(p.read_bytes()).hexdigest()
+        provenance['metadata_matching_policy']=metadata_policy
     (OUT/'provenance.json').write_text(json.dumps(provenance,indent=2),encoding='utf-8')
     print(json.dumps(metrics,indent=2))
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--metadata-match',choices=['broad','strict'])
+    main(parser.parse_args().metadata_match)

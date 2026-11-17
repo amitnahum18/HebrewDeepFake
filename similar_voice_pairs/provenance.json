@@ -4,10 +4,14 @@
     "voice_distribution\\sample_acoustic_features.csv": "bcedfe48f0bf49016df511f870d3210496420039a19f56aca8b269f584f90c45",
     "voice_distribution\\embeddings.npz": "a6f945e9c3b2e850fbfce704b4a94a1196d31450a66133d06e6f0dba9b4bee5e",
     "cluster_voice_features.py": "fe43789b238781810f041e164b5c84a8c45c981d0aa21a5ca11c0ed18e3ef20b",
-    "select_similar_voice_pairs.py": "d9c2043af8daec21b1a79233fd4081bd0b59fc8f4c538b1ff90503896c3f346c"
+    "select_similar_voice_pairs.py": "45df82f8afc7031050153522a03306d2de151a050991aea710dbb7da278c50a3",
+    "metadata_pair_constraints.py": "b370682ee7afc2e5bbc949aa46695fd6c0627d8a22c416a2823b9f668e0ab44a",
+    "synthetic_pilot\\manifest.csv": "58ab5430dcfee2bbe72201547b8cd603c3925d9e963dbfbf43d21933cb79205e",
+    "similar_voice_pairs\\human_pair_feedback.json": "a3f5ca6a689264f5ad5664d53bf0ac5bd0896966f291b9fdeea10e1be28a4e49"
   },
   "acoustic_scaler": "identity-fitted original core acoustic transform from clustering; no class labels in fit",
   "ecapa": "original per-clip L2 vectors; cosine distance",
   "hybrid": "Euclidean on equal-expected-energy acoustic+ECAPA blocks, using identity-fitted block scale",
-  "human_similarity_not_yet_rated": true
+  "human_similarity_not_yet_rated": true,
+  "metadata_matching_policy": "broad"
 }

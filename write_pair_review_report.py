@@ -5,6 +5,9 @@ import pandas as pd
 ROOT=Path(__file__).resolve().parent;OUT=ROOT/'similar_voice_pairs'
 def main():
     selected=pd.read_csv(OUT/'selected_pairs.csv');m=json.loads((OUT/'key_metrics.json').read_text())
+    if m.get('metadata_matching_policy'):
+        write_metadata_report(selected,m)
+        return
     names={'hybrid':'A — שילוב','acoustic':'B — אקוסטיקה','ecapa':'C — ECAPA','consensus':'הסכמה'}
     lines=['# שש דוגמאות בכל קבוצת התאמה קולית','',
     'פתחו את [דף ההאזנה העצמאי](listen_portable.html) בדפדפן רגיל. האודיו והגרפים מוטמעים ב־HTML; אין צורך בתיקיית אודיו לצורך הניגון. ב־GitHub יש להוריד את קובץ ה־HTML ולפתוח אותו בדפדפן, ולא לצפות בקוד המקור שלו.', '',
@@ -33,4 +36,25 @@ def main():
     'זוגות A4 ו־A5 דווחו כלא מתאימים: הבדל בגיל הנתפס ב־A4 והבדל בין קול גברי לנשי ב־A5. הם מסומנים בדף ההאזנה בכל הופעה של אותו זוג. הבחירות והציונים המקוריים נשמרו לתיעוד הכשלים; אין לראות בהם התאמות שאושרו בהאזנה.', '',
     'הבדיקה המלאה, מגבלות תיוגי העזר והמלצות לתהליך התאמה נפרד מופיעים ב־[MATCHING_AUDIT_HE.md](MATCHING_AUDIT_HE.md). המשוב נשמר ב־`human_pair_feedback.json`, והסריקה לכל 24 הכרטיסים ב־`matching_audit.csv`. לא שונו תוויות דמוגרפיות במקור ולא הומצאו ציוני דמיון מספריים מתוך המשוב.']
     (OUT/'README_HE.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+def write_metadata_report(selected,m):
+    lines=['# השוואת זוגות לפי תוויות מין וגיל במקור','',
+    'האתר בוחר מחדש שישה זוגות בכל אחת מהשיטות A/B/C ובקבוצת ההסכמה. ההתאמה היא לפי תווית המין במקור האמיתי ותיאור הקול אצל הספק, ולפי קבוצות גיל רחבות ניסוייות. לא בוצע סיווג דמוגרפי מהאודיו.', '',
+    '**מגבלת הגיל:** תיאורי הספק אינם מגדירים גיל מספרי. הנחת העבודה היא young ↔ 18–39, middle_aged ↔ 40–59, old ↔ 60+. גיל האמת מבוסס על אומדן המקור, ואינו גיל מאומת בזמן ההקלטה. אין לטעון שפער הגיל קטן מעשר שנים או שהקולות נשמעים בני אותו גיל.', '',
+    f"מתוך {m['duration_word_candidate_pairs_before_metadata']:,} זוגות שעמדו בתנאי האורך נותרו {m['controlled_candidate_pairs']:,} זוגות לאחר סינון, מ־{m['eligible_real_speakers']} דוברים אמיתיים ו־{m['eligible_synthetic_groups']} קולות מסונתזים. כל הזוגות המסונתזים הם ElevenLabs, משום שרק להם יש שתי תוויות ספק בקבצים הקיימים. זהו מדגם מותנה בזמינות מטא־דאטה, ולא ייצוג של כל הספקים.", '',
+    'תוויות חסרות וניטרליות אינן נכללות. הזוגות הקודמים שנפסלו במשוב המשתמש הוצאו לפי מזהים, לא לפי מספר הזוג. המספרים A4/A5 בגרסה החדשה מתייחסים לזוגות אחרים. הבחירות הקודמות נשמרו ב־`selection_before_metadata_filter.csv`, וב־Git קיימת גם הגרסה הקודמת המלאה.', '',
+    'תנאי האורך נשמרו: שמונה מילים בכל צד ופער משך עד 0.5 שנייה. לכל קבוצה שישה מזהים אמיתיים ושישה קולות ספק שונים. מגבלת שלושה זוגות לספק הוסרה כדי לאפשר עבודה עם הספק היחיד הזמין. השיטות משתמשות באותם פיצ׳רים ובאותו מאגר מסונן, ללא PCA בשלב הדירוג.', '',
+    '**הציונים חושבו מחדש יחסית ל־258 המועמדים המסוננים**, ולכן אין להשוות את ערכיהם ישירות לציוני הגרסה הישנה. ציון יחסי אינו אחוז דמיון שמיעתי. A = שילוב, B = אקוסטיקה, C = ECAPA.', '',
+    '| שיטה | זוג | תוויות מין | טווח אמת | גיל ספק | קול מסונתז | A | B | C |',
+    '|---|---:|---|---|---|---|---:|---:|---:|']
+    names={'hybrid':'A','acoustic':'B','ecapa':'C','consensus':'הסכמה'}
+    for r in selected.itertuples():
+        scores=[100*(1-getattr(r,k+'_percentile')) for k in ['hybrid','acoustic','ecapa']]
+        lines.append(f'| {names[r.selection_method]} | {r.within_method_rank} | {r.real_source_sex_label} | {r.real_source_age_proxy_bin} | {r.synthetic_provider_age_label} | {r.voice} | {scores[0]:.2f} | {scores[1]:.2f} | {scores[2]:.2f} |')
+    lines+=['','## קבצים ושחזור','',
+    '`listen_portable.html` מכיל את קטעי האודיו והגרפים ופועל ללא תיקיית אודיו. `selected_pairs.csv` ו־`metadata/` מתעדים תוויות, מקורות וציונים. `human_pair_feedback.json` שומר את המשוב ההיסטורי; הוא לא הועבר לזוגות חדשים בעלי אותו מספר.', '',
+    'שחזור: `python select_similar_voice_pairs.py --metadata-match broad`, ואז `python build_voice_pair_review.py`, `python verify_voice_pair_browser.py`, `python verify_similar_voice_pairs.py`.', '',
+    'אין כרגע מידע מספיק להתאמה בגיל מספרי מאומת: מצב `--metadata-match strict` עוצר לפני החלפת הבחירות. לא נוצר אודיו חדש ולא בוצעו קריאות API.']
+    (OUT/'README_HE.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+
+
 if __name__=='__main__':main()

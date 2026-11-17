@@ -1,6 +1,6 @@
 """Offline listening gallery, comparable rank plots and auditable pair report."""
 from pathlib import Path
-import json,html,base64,hashlib
+import json,html,base64,hashlib,re
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,7 +17,7 @@ fig,ax=plt.subplots(figsize=(11,max(6,len(selected)*.38)));im=ax.imshow(percent,
 ax.set_xticks(range(3),['Acoustic distance','ECAPA cosine distance','Hybrid distance']);ax.set_yticks(range(len(selected)),labels)
 for i in range(len(selected)):
     for j in range(3):ax.text(j,i,f'{percent[i,j]:.2f}%',ha='center',va='center',fontsize=10)
-ax.set_title('Rank among 5,308 controlled pairs: lower percentile = closer\nDifferent methods have different raw distance scales; ranks are not human quality scores')
+ax.set_title(f"Rank among {metrics['controlled_candidate_pairs']:,} eligible pairs: lower percentile = closer\nDifferent methods have different raw distance scales; ranks are not human quality scores")
 fig.colorbar(im,ax=ax,label='Percentile rank (%), logarithmic colour scale');fig.tight_layout();fig.savefig(FIG/'pair_rank_comparison.png',dpi=160);plt.close(fig)
 fig,ax=plt.subplots(figsize=(11,max(5,len(selected)*.32)));y=np.arange(len(selected));ax.barh(y-.16,selected.real_duration_s,height=.3,label='Real');ax.barh(y+.16,selected.synthetic_duration_s,height=.3,label='Synthetic');ax.set_yticks(y,labels);ax.set(xlabel='Seconds',title='Same count: 8 words; duration gap <=0.5 s; texts differ');ax.legend();fig.tight_layout();fig.savefig(FIG/'pair_duration_controls.png',dpi=160);plt.close(fig)
 
@@ -64,11 +64,24 @@ function render(){""")
 template=template.replace("status()}\nfunction status()", "groupSummary(method);status()}\nfunction status()")
 template=template.replace('__DATA__',payload).replace('__AUDIO_SOURCES__',json.dumps(audio_sources))
 template=template.replace('ציון התאמה יחסי','דירוג קרבה יחסי במאגר')
-template=template.replace('</h1>', '</h1><p class="matching-warning">הציונים הם דירוג יחסי בלבד, לא אחוז דמיון שמיעתי. זוגות A4 ו־A5 נפסלו במשוב המשתמש ונשמרו לתיעוד הכשל. התאמה בגיל נתפס ובהצגה קולית לא נכללה בתנאי הבחירה.</p>')
+if not metrics.get('metadata_matching_policy'):
+    template=template.replace('</h1>', '</h1><p class="matching-warning">הציונים הם דירוג יחסי בלבד, לא אחוז דמיון שמיעתי. זוגות A4 ו־A5 נפסלו במשוב המשתמש ונשמרו לתיעוד הכשל. התאמה בגיל נתפס ובהצגה קולית לא נכללה בתנאי הבחירה.</p>')
 template=template.replace('.sides{display:grid;', '.matching-warning{padding:12px;border:2px solid #a84913;border-radius:8px;background:#fff3e8;color:#71330c}.matching-status{padding:9px;border:1px solid #d5e0e7;border-radius:6px}.sides{display:grid;')
 template=template.replace('${scoreBoxes(d)}<div class="sides">', '${matchingWarning(d)}${scoreBoxes(d)}<div class="sides">')
 template=template.replace('function scoreBoxes(d){', '''function matchingWarning(d){const a=d.matching_audit;if(a.human_feedback_status==='human_reported_mismatch')return '<p class="matching-warning" data-review-status="human_reported_mismatch"><b>לא מתאים לפי משוב המשתמש</b><br>'+esc(a.human_feedback_note_he)+'</p>';if(a.metadata_screen_status==='proxy_disagreement')return '<p class="matching-status" data-review-status="proxy_disagreement">נדרשת האזנה: אי־הסכמה בין תיוג המקור לסיווג האוטומטי של הקול המסונתז. אלה תיוגים מסוגים שונים ואינם מאומתים כהתאמה.</p>';return '<p class="matching-status" data-review-status="not_reviewed">ההתאמה השמיעתית והגיל הנתפס טרם אומתו אנושית.</p>'}
 function scoreBoxes(d){''')
+if metrics.get('metadata_matching_policy'):
+    intro='''<div class="intro"><b>התאמה לפי תוויות מקור — מין תואם וקבוצת גיל רחבה תואמת.</b><p>זהו ניסוי לפי מטא־דאטה: מין במקור האמיתי מול תיאור קול של הספק. קבוצות הגיל הן הנחת עבודה: young ↔ 18–39, middle_aged ↔ 40–59, old ↔ 60+. גיל האדם הוא אומדן מקור; גיל הקול המסונתז הוא תיאור ספק. אין כאן גיל מאומת, קביעה לפי האודיו או הבטחה לפער גיל קטן בשנים.</p><p>רק ElevenLabs סיפקה את שתי התוויות בקבצים הקיימים. תוויות חסרות וניטרליות הוצאו, וכך גם הזוגות הקודמים שנפסלו במשוב המשתמש. בכל קבוצה שישה דוברים אמיתיים ושישה קולות מסונתזים שונים. התאמה שמיעתית עדיין דורשת האזנה.</p><p>A = אקוסטיקה + ECAPA; B = אקוסטיקה; C = ECAPA. בכל זוג שמונה מילים בכל צד, טקסטים שונים ופער משך עד חצי שנייה. הציונים הם דירוג יחסי בתוך המאגר המסונן, לא אחוז דמיון. האודיו והמהירות לא שונו; אפשר לבחור עוצמה מקורית או עוצמת האזנה מותאמת.</p></div>'''
+    template=re.sub(r'<div class="intro">.*?</div>',lambda _:intro,template,count=1,flags=re.S)
+    for age_mapping in ['young ↔ 18–39','middle_aged ↔ 40–59','old ↔ 60+']:
+        template=template.replace(age_mapping,'<bdi dir="ltr">'+age_mapping+'</bdi>')
+    explanation=f"נבדקו {metrics['duration_word_candidate_pairs_before_metadata']:,} זוגות שעומדים בתנאי המילים והמשך; לאחר סינון המטא־דאטה נותרו {metrics['controlled_candidate_pairs']:,} זוגות, מ־{metrics['eligible_real_speakers']} דוברים אמיתיים ומ־{metrics['eligible_synthetic_groups']} קולות ספק. לכל שיטה נבחרו שישה זוגות באופטימיזציה עם מזהים שונים. מגבלת גיוון ספקים הוסרה כי כרגע רק ספק אחד כולל תוויות זמינות. זוגות ההסכמה מדורגים לפי אחוזון המרחק הגרוע מבין שלוש השיטות."
+    template=re.sub(r'(<summary>איך נבחרו הזוגות ומה אפשר להסיק\?</summary>)<p>.*?</p>',lambda m:m[1]+'<p>'+explanation+'</p>',template,count=1,flags=re.S)
+    template=template.replace('</h1>','</h1><p class="matching-warning">נבחרו זוגות חדשים לפי תוויות מקור. גיל דומה פירושו כאן אותה קבוצה רחבה לפי הנחת העבודה בלבד. אין עדיין אימות שמיעתי של הדמיון או של הגיל הנתפס.</p>')
+    start=template.index('function matchingWarning(d){')
+    end=template.index('function scoreBoxes(d){',start)
+    template=template[:start]+'''function matchingWarning(d){const sex=d.real_source_sex_label==='male'?'זכר / תיאור קול גברי':'נקבה / תיאור קול נשי';return '<p class="matching-status" data-metadata-eligible="true"><b>תוויות תואמות: '+sex+'</b><br>טווח גיל במקור: <bdi dir="ltr">'+esc(d.real_source_age_proxy_bin)+'</bdi>; תיאור גיל הספק: <bdi dir="ltr">'+esc(d.synthetic_provider_age_label)+'</bdi>. זו התאמה בקבוצת גיל ניסויית רחבה, לא גיל מאומת. הדמיון השמיעתי טרם אומת.</p>'}
+''' +template[end:]
 for name in ['pair_rank_comparison','pair_duration_controls']:
     uri='data:image/png;base64,'+base64.b64encode((FIG/(name+'.png')).read_bytes()).decode('ascii')
     template=template.replace('figures/'+name+'.png',uri)
