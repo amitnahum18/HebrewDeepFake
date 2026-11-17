@@ -18,4 +18,4 @@ for path in ROOT.glob('*.ipynb'):
     if any(o.get('output_type')=='error' for c in code for o in c.get('outputs',[])):failures.append(path.name+':cell_error')
     notebooks.append({'name':path.name,'executed_code_cells':len(code)})
 assert not failures,failures
-print(json.dumps({'passed':True,'manifest_files':len(manifest['files']),'notebooks':notebooks,'audio_or_model_files':0,'note':'Snapshot integrity only. Full audio-dependent runs require excluded inputs.'},indent=2))
+print(json.dumps({'passed':True,'manifest_files':len(manifest['files']),'notebooks':notebooks,'standalone_audio_or_model_files':0,'embedded_listening_audio':manifest.get('included_embedded_audio'),'note':'Snapshot integrity only. Full audio-dependent runs require excluded inputs.'},indent=2))

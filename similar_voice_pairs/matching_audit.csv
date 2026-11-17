@@ -1,0 +1,25 @@
+﻿selection_method,within_method_rank,pair_id,real_source_sex_label,synthetic_model_perceived_presentation,synthetic_presentation_confidence,synthetic_human_verified,metadata_screen_status,human_feedback_status,human_feedback_reason,human_feedback_note_he,age_matching_status
+acoustic,1,real_hhimhVLGDTDBxuoMlA5t3_65__0f9a0ce821cb737d5002,female,feminine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+acoustic,2,real_1ghwKO863gW1hszGYN4KQ_0__31b63dc01858e0bb0533,unknown,masculine,0.7,False,unknown,not_reviewed,,,not_validated
+acoustic,3,real_qwL0wPbs35CiKQux8BjF4_0__c654a5f4ca313eb08ec8,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+acoustic,4,real_7gkGX0sVCA46_OiQfobgP_0__38d599cb232ac4e4bcc9,male,feminine,0.7,False,proxy_disagreement,not_reviewed,,,not_validated
+acoustic,5,real_RWkzghBSRu_Ida4ygixt7_85__c2990692428a39a0b294,male,feminine,0.7,False,proxy_disagreement,not_reviewed,,,not_validated
+acoustic,6,real_xLuL7PWDt60QkQIgCiz0y_14__24805620e447a5852c0f,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+ecapa,1,real_H4QYDbzHTv1RwaD9pNwL3_94__c2990692428a39a0b294,female,feminine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+ecapa,2,real_82YCCoo0RY69EFlzQ3rBO_0__eff0c10a65e2b8ccde17,male,feminine,0.7,False,proxy_disagreement,not_reviewed,,,not_validated
+ecapa,3,real_ZOeGNb4U40DQN2KSPOu3V_11__d2ceb2ebf1d23047da79,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+ecapa,4,real_nAgdN7hBEiKuS51DFFjaP_13__6cf9c8365c680c0bd804,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+ecapa,5,real_y4SrtfAJrpunS9oRBqUbD_1__94f69fb41ff67c289459,female,masculine,0.7,False,proxy_disagreement,not_reviewed,,,not_validated
+ecapa,6,real_gWRB46_EoNL_nGlv5Af7V_35__40d7384c643b2c88758b,female,feminine,0.8,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+hybrid,1,real_ZOeGNb4U40DQN2KSPOu3V_11__66a3803ac3e32b0baa0d,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+hybrid,2,real_hJ5UvdheMpSy9b8T6ZCx4_95__f955f055aa3803841092,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+hybrid,3,real_J9ExZW4anxQoNsSMowg0X_0__49852232456227705e74,unknown,masculine,0.7,False,unknown,not_reviewed,,,not_validated
+hybrid,4,real_hhimhVLGDTDBxuoMlA5t3_65__e1a3a90aa0aee4824351,female,masculine,0.7,False,proxy_disagreement,human_reported_mismatch,perceived_age_difference,"לפי האזנת המשתמש: הקלטה א׳ נשמעת ילדה והקלטה ב׳ נשמעת בוגרת יותר. זהו תיאור תפיסתי, לא גיל מאומת.",human_reported_difference
+hybrid,5,real_7gkGX0sVCA46_OiQfobgP_0__3bd9461132b8ffcc2960,male,feminine,0.7,False,proxy_disagreement,human_reported_mismatch,perceived_voice_presentation_difference,לפי האזנת המשתמש: הקלטה אחת נשמעת גברית והשנייה נשית. לא נמסר שיוך אנושי לכל צד.,not_validated
+hybrid,6,real_xLuL7PWDt60QkQIgCiz0y_14__c85c8f3b86146242a5a7,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+consensus,1,real_hJ5UvdheMpSy9b8T6ZCx4_95__f955f055aa3803841092,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+consensus,2,real_ZOeGNb4U40DQN2KSPOu3V_11__eab48814a557dbac9f14,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+consensus,3,real_hhimhVLGDTDBxuoMlA5t3_65__e1a3a90aa0aee4824351,female,masculine,0.7,False,proxy_disagreement,human_reported_mismatch,perceived_age_difference,"לפי האזנת המשתמש: הקלטה א׳ נשמעת ילדה והקלטה ב׳ נשמעת בוגרת יותר. זהו תיאור תפיסתי, לא גיל מאומת.",human_reported_difference
+consensus,4,real_RWkzghBSRu_Ida4ygixt7_85__3e896ba2b936ca121342,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated
+consensus,5,real_J9ExZW4anxQoNsSMowg0X_0__c654a5f4ca313eb08ec8,unknown,masculine,0.7,False,unknown,not_reviewed,,,not_validated
+consensus,6,real_xLuL7PWDt60QkQIgCiz0y_14__c85c8f3b86146242a5a7,male,masculine,0.7,False,proxy_agreement_unverified,not_reviewed,,,not_validated

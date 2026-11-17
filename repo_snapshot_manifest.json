@@ -9,8 +9,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 441,
-      "sha256": "f9e6082f6fbfdd63939c78f4f10fb4eaa910582e7fe1ae25d589e6fddd657e71"
+      "bytes": 462,
+      "sha256": "b638631203d4aef17f5fc45313a01b922f9de78053bb98012309f57d346ed8e6"
     },
     {
       "path": "analyze_voice_distributions.py",
@@ -21,6 +21,11 @@
       "path": "audio_eda.py",
       "bytes": 2709,
       "sha256": "7f4e84fd8098fe06ab80e6dbbbe3aa85b455b7cb42573b59f4cad822623a73b1"
+    },
+    {
+      "path": "audit_voice_pair_matching.py",
+      "bytes": 8182,
+      "sha256": "d352793b31e5d4cc8d07a84dee82c269aaeb4379d02575f1f33f2327bb167a05"
     },
     {
       "path": "build_clustering_notebook.py",
@@ -61,6 +66,11 @@
       "path": "build_voice_distribution_notebook.py",
       "bytes": 11020,
       "sha256": "13dc7f160afd6f3134dcb88a40852db51d73dce3b64f3e041b77ba4139671891"
+    },
+    {
+      "path": "build_voice_pair_review.py",
+      "bytes": 19835,
+      "sha256": "b3dc0c2debc3ec89d9e3be596bc662f68316e2d2c5839e892014cb4210d07998"
     },
     {
       "path": "cluster_voice_features.py",
@@ -479,8 +489,8 @@
     },
     {
       "path": "DATA_AND_GIT_POLICY.md",
-      "bytes": 3004,
-      "sha256": "38f7b1fc6d2dad7bed9635fb4e1a350e3e14b163147ca9502bb4cf601ada66ae"
+      "bytes": 3542,
+      "sha256": "1ad9bf8ed5ad1a69186f1120bfd7f20e3001e14e9a793bf9d77e6f684211a707"
     },
     {
       "path": "dataset.ipynb",
@@ -779,8 +789,8 @@
     },
     {
       "path": "publish_project_snapshot.py",
-      "bytes": 4334,
-      "sha256": "fcbe2067fb854d803495ddcd562385eb5b04f66a7a094ccd563dfcd2c28fd9cb"
+      "bytes": 5862,
+      "sha256": "902daa503d484479ab75f15ae47ac81321dc013153c92f05bb05ccb343dcdb11"
     },
     {
       "path": "QUALITY_AND_MATCHING_SPEC_HE.md",
@@ -919,8 +929,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7628,
-      "sha256": "a1958eae001cddb26006ab26c4a9b45de685efda015ab309af97a06aad3d8391"
+      "bytes": 8422,
+      "sha256": "def5cf5f08f7ea788274f4dda6d3f4415e30dbbbb8c0e8faef3f67e389c019a5"
     },
     {
       "path": "README_EDA.md",
@@ -961,6 +971,221 @@
       "path": "requirements-synthetic.txt",
       "bytes": 70,
       "sha256": "7cf64c11583019af2cadaecbe77a478ac283be812d67487a0df2d57e4d1815a8"
+    },
+    {
+      "path": "select_similar_voice_pairs.py",
+      "bytes": 10069,
+      "sha256": "d9c2043af8daec21b1a79233fd4081bd0b59fc8f4c538b1ff90503896c3f346c"
+    },
+    {
+      "path": "similar_voice_pairs/audio_assets.json",
+      "bytes": 33914,
+      "sha256": "6a513677fa34ddfbd4bcdb72ffb027053ebd79450b87d46dddcac48b199833cf"
+    },
+    {
+      "path": "similar_voice_pairs/browser_desktop.png",
+      "bytes": 65737,
+      "sha256": "175e7f5dedad0ad9e0eb01c184bf118be47d2a4e1f2aa95dbfbfeb9e8af6ca71"
+    },
+    {
+      "path": "similar_voice_pairs/browser_mobile.png",
+      "bytes": 35842,
+      "sha256": "8f77bf4131151d23c0223bb577242840407edbef0ac43522c4fa007ec6e11574"
+    },
+    {
+      "path": "similar_voice_pairs/browser_verification.json",
+      "bytes": 18830,
+      "sha256": "c272d6c06e7d8bc3ab97a3ceb9fc0981533d40c5644487241c8ce66b83c11224"
+    },
+    {
+      "path": "similar_voice_pairs/controlled_candidate_pairs.csv",
+      "bytes": 2016852,
+      "sha256": "296c7da2711269852bef2f266fbdcb2ec547cbe3d146eef53d93c859980f282f"
+    },
+    {
+      "path": "similar_voice_pairs/figures/pair_duration_controls.png",
+      "bytes": 89945,
+      "sha256": "e41b3bdca94444371569643e73ffdabf9cdc435030403ba7abb6e0f80e0f22c4"
+    },
+    {
+      "path": "similar_voice_pairs/figures/pair_rank_comparison.png",
+      "bytes": 264354,
+      "sha256": "b74dd286db4bcdb9bd3fee8e1bb1a59e9f79848ad2d07f928da1c481c2c2184a"
+    },
+    {
+      "path": "similar_voice_pairs/gallery_data.json",
+      "bytes": 92103,
+      "sha256": "d35824a8660ca759b20488c3dc3f6fe0f4ce21c83835a5ac04713b6f51452ae2"
+    },
+    {
+      "path": "similar_voice_pairs/human_pair_feedback.json",
+      "bytes": 1344,
+      "sha256": "a3f5ca6a689264f5ad5664d53bf0ac5bd0896966f291b9fdeea10e1be28a4e49"
+    },
+    {
+      "path": "similar_voice_pairs/key_metrics.json",
+      "bytes": 1033,
+      "sha256": "d58e9515533ec28ed9ceb1b5fe86810620cc605a13a460c45e6e204373f3da56"
+    },
+    {
+      "path": "similar_voice_pairs/listen_portable.html",
+      "bytes": 12941074,
+      "sha256": "fd492acb2c473a7d88d869ab5f4e3a780d7705c75bdd5667b419d0a4c03772ca"
+    },
+    {
+      "path": "similar_voice_pairs/matching_audit.csv",
+      "bytes": 4264,
+      "sha256": "ef2da2db69002ecd266a32623cd24c4f8b542787ffbaa88f30041534bc99e516"
+    },
+    {
+      "path": "similar_voice_pairs/MATCHING_AUDIT_HE.md",
+      "bytes": 3305,
+      "sha256": "0fef40351dacaf9f79d9ba13e2292cafa1f17f73dd0eb5d4f693f33044d9d107"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/acoustic_1.json",
+      "bytes": 3910,
+      "sha256": "78479e531d3095dd79c5fd7aecf5ab997009e8674b96f9c839bc63c7493810a6"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/acoustic_2.json",
+      "bytes": 3892,
+      "sha256": "e5ce42a86057bb88aee3389565e6f30c274e3309d7a963ec8d046c4ae1abd8c5"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/acoustic_3.json",
+      "bytes": 3942,
+      "sha256": "62348a85cb242e7e74ab2e2f5dae0484e30d91fc43843c3b27239643fa354eb8"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/acoustic_4.json",
+      "bytes": 3945,
+      "sha256": "55738cdeb52cbcc14377976328f5bc4b492820d245857ae12faf418aedcae8f4"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/acoustic_5.json",
+      "bytes": 3936,
+      "sha256": "65562a9e8839c3666c519a4a7357c8c8bf0c8a78a9f3b7ae95723754d1907708"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/acoustic_6.json",
+      "bytes": 3919,
+      "sha256": "6bbcfb3ad9700c243ec92fe0b24ae21fcd8f669a0976acb0f14e465d4fa00a66"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/consensus_1.json",
+      "bytes": 3896,
+      "sha256": "bdd93857776dbc5dddf63088df530b0a99b519f39b91f0158716a08ef3c69af7"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/consensus_2.json",
+      "bytes": 3899,
+      "sha256": "82cb2dbf12edec1fdd73b36696e5544d0412eb2c0e93a7b727c32a5959f21d6b"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/consensus_3.json",
+      "bytes": 4123,
+      "sha256": "9d3787b6d91db83f4e764dfe4bc43f8a01d0d1a8da96abec6ecb7ab076cdbe77"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/consensus_4.json",
+      "bytes": 3906,
+      "sha256": "ffe62b02d47661180759ce014c9d6c1a2d71a0b4f3a78455a0b143e35ecdd877"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/consensus_5.json",
+      "bytes": 3929,
+      "sha256": "202b6453cc203218120b617d89499a964282c49e920d3f83746211f5f62dc802"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/consensus_6.json",
+      "bytes": 3927,
+      "sha256": "7d73a5b07b3260bf83eb0716d5dc53e40cafb8eb22560be3893c06b9c09d0ecf"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/ecapa_1.json",
+      "bytes": 3917,
+      "sha256": "2ec97008dca1a48fddb9a6fc4ca8d8269a6332a912058e856836704a030d9893"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/ecapa_2.json",
+      "bytes": 3937,
+      "sha256": "83b70f8e3fa5386c90822f8677960ed89213ad6c2f3f561cec74f1fb479011fd"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/ecapa_3.json",
+      "bytes": 3901,
+      "sha256": "e0692d1997f866dff6856c1cc958c238f0a490d2014c2e9589141b57e0c11b90"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/ecapa_4.json",
+      "bytes": 3961,
+      "sha256": "d348b4b7230f45c5b6333d9d110ac4115fc38504bf934b7a8221bd924c631ced"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/ecapa_5.json",
+      "bytes": 3927,
+      "sha256": "6af1ad9d94e0c61afce60a1dba7ef933e8aef1ce0305b23432b61b9441f4a06f"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/ecapa_6.json",
+      "bytes": 3896,
+      "sha256": "059ea29971f84b6b504ba4ac3795ffc3f5e6e3d9050ab90a2a11c120956800c7"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/hybrid_1.json",
+      "bytes": 3896,
+      "sha256": "664c11510e3fd9c7c0a9416efb1376cfe4a4a8ae793acf4f7f08e5891f611222"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/hybrid_2.json",
+      "bytes": 3890,
+      "sha256": "1c272f8424925dde12de9ae3447ae523d152f6a21e3d3970bc629a5de9e52081"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/hybrid_3.json",
+      "bytes": 3874,
+      "sha256": "7d89ef0bf3396af4467a7c260d77b11aae2c6f98cf5a1f5a55da0f7eb323e7e2"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/hybrid_4.json",
+      "bytes": 4117,
+      "sha256": "6b1f76dcc360813cc7d4e8d9379d2b1dfd5e975a5335a4d575ceea562ebcd8b4"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/hybrid_5.json",
+      "bytes": 4122,
+      "sha256": "734461ef23fde4846b00191fa44f1919825e94352a533c5799601c76020e4bbb"
+    },
+    {
+      "path": "similar_voice_pairs/metadata/hybrid_6.json",
+      "bytes": 3921,
+      "sha256": "4dac92f4ece4cf2213d68fb22dfcf53c2c1c1b0ead0f68fd4c71c1c59e58008d"
+    },
+    {
+      "path": "similar_voice_pairs/provenance.json",
+      "bytes": 901,
+      "sha256": "879d17e467764b8eeb7aaf10aa6861c163228da91c6875b7b74eb813d752bd58"
+    },
+    {
+      "path": "similar_voice_pairs/README_HE.md",
+      "bytes": 8175,
+      "sha256": "b6946955f8139e0abc63862daf2d37c55af41dd2cd5ea2ba10a25c6f52c82cb6"
+    },
+    {
+      "path": "similar_voice_pairs/selected_pairs.csv",
+      "bytes": 10365,
+      "sha256": "32835586716215b5fa35d7616ac2abeb62451e7beec77335bd321aa382987aff"
+    },
+    {
+      "path": "similar_voice_pairs/uncontrolled_selection_reference.csv",
+      "bytes": 5907,
+      "sha256": "7267caa62811ed8cef6df730839e4bca809bd08b83d5bdac7c4ec47b71bbad70"
+    },
+    {
+      "path": "similar_voice_pairs/verification.json",
+      "bytes": 16779,
+      "sha256": "ebe3e2a62e0485cd8820d4d724daa23bb8706531cce5bdc3eae33f78d21c274a"
     },
     {
       "path": "SYNTHETIC_ALLOCATION_PLAN_HE.md",
@@ -1244,8 +1469,13 @@
     },
     {
       "path": "verify_repo_snapshot.py",
-      "bytes": 1406,
-      "sha256": "65cb9cde76b7bc33e1dd2c0b48abe0170519758251ac489b5e223bdafe0b3300"
+      "bytes": 1484,
+      "sha256": "c271b79a75af0d281c6f061d432b2ab7a397484f2fec3ccc633cfaba71a586de"
+    },
+    {
+      "path": "verify_similar_voice_pairs.py",
+      "bytes": 5516,
+      "sha256": "c74a69eb00ebefeb93bc98aebc1bf72839e6fd2d7b897733e4711cbae7cb87b2"
     },
     {
       "path": "verify_synthetic_pilot.py",
@@ -1261,6 +1491,11 @@
       "path": "verify_voice_distributions.py",
       "bytes": 4790,
       "sha256": "07f6a2515f529b68a9138736aab27d6b4e0c39a403af0720fc7118f2a10acd11"
+    },
+    {
+      "path": "verify_voice_pair_browser.py",
+      "bytes": 4255,
+      "sha256": "b914ca7be81e1d3b328a77125f2e45f0c781b6cf8b2dddd4768966bd11d21185"
     },
     {
       "path": "voice_clustering.ipynb",
@@ -1498,13 +1733,18 @@
       "sha256": "872273f02d9ffb25bc86f586f9ca2a226085a1957540561f3441f44ec7543a5f"
     },
     {
+      "path": "write_pair_review_report.py",
+      "bytes": 6829,
+      "sha256": "74ab76a506307c3654a1a8b97618ad42c6e5dd3bfeb0dea2fa6287701d8e9753"
+    },
+    {
       "path": "write_voice_distribution_report.py",
       "bytes": 16363,
       "sha256": "432d1113fc2c0daea08de3ac7f0dcb669e4d9b5d34312ce7d714042722337baf"
     }
   ],
-  "file_count": 300,
-  "total_bytes": 30629084,
+  "file_count": 348,
+  "total_bytes": 46392036,
   "excluded_real_exports": [
     {
       "path": "eda_outputs/recording_features.csv",
@@ -1532,13 +1772,21 @@
     }
   ],
   "excluded_categories": [
-    "raw/derived audio",
+    "standalone audio files (selected listening audio is explicitly embedded in the HTML)",
     "downloaded model weights",
     "local environments/dependencies",
     "API keys and account/auth responses",
     "local budget guard",
-    "temporary/browser state"
+    "temporary/browser state",
+    "pending Drive upload bundles/logs"
   ],
+  "included_embedded_audio": {
+    "path": "similar_voice_pairs/listen_portable.html",
+    "original_recordings": 33,
+    "selection_cards": 24,
+    "pairs_per_group": 6,
+    "scope": "raw and listening-level representations of selected real/synthetic excerpts; explicitly requested playable examples"
+  },
   "credential_pattern_scan": "passed; no candidate matches; secret values never printed",
   "note": "Historical run paths/hashes retained. Rebuild audio-dependent exports for a new machine. LICENSE belongs to existing remote and is unchanged."
 }

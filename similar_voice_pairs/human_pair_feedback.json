@@ -1,0 +1,30 @@
+[
+  {
+    "pair_id": "real_hhimhVLGDTDBxuoMlA5t3_65__e1a3a90aa0aee4824351",
+    "original_group": "A",
+    "original_rank": 4,
+    "status": "human_reported_mismatch",
+    "reason": "perceived_age_difference",
+    "note_he": "לפי האזנת המשתמש: הקלטה א׳ נשמעת ילדה והקלטה ב׳ נשמעת בוגרת יותר. זהו תיאור תפיסתי, לא גיל מאומת.",
+    "side_A": "real_hhimhVLGDTDBxuoMlA5t3_65",
+    "side_B": "e1a3a90aa0aee4824351",
+    "reviewer": "user",
+    "reported_date": "2026-11-17",
+    "scope": "pair similarity only; no source demographic label overwritten",
+    "numeric_similarity_rating": null
+  },
+  {
+    "pair_id": "real_7gkGX0sVCA46_OiQfobgP_0__3bd9461132b8ffcc2960",
+    "original_group": "A",
+    "original_rank": 5,
+    "status": "human_reported_mismatch",
+    "reason": "perceived_voice_presentation_difference",
+    "note_he": "לפי האזנת המשתמש: הקלטה אחת נשמעת גברית והשנייה נשית. לא נמסר שיוך אנושי לכל צד.",
+    "side_A": "3bd9461132b8ffcc2960",
+    "side_B": "real_7gkGX0sVCA46_OiQfobgP_0",
+    "reviewer": "user",
+    "reported_date": "2026-11-17",
+    "scope": "pair similarity only; no source demographic label overwritten",
+    "numeric_similarity_rating": null
+  }
+]

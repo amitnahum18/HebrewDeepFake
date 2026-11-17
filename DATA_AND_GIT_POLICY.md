@@ -7,10 +7,11 @@
 - Compact derived feature tables, cached ECAPA vectors/identity centroids, clustering matrices and assignments, figures and provenance/verification snapshots.
 - Synthetic planned/generated manifests, final review CSV, review-attempt history, reported costs, public catalog/voice snapshots and proposal manifests.
 - Selected real-source summaries and audit outputs. `repo_snapshot_manifest.json` records the exact inclusion list and file hashes.
+- At the user's explicit request, `similar_voice_pairs/listen_portable.html` embeds selected real and synthetic listening excerpts: six pairs per group A/B/C and consensus. This is an exception for the playable listening artifact, not publication of all audio. Raw/listening-level representations are copies, not new independent recordings. The snapshot manifest records the number of selected underlying recordings.
 
 ## Excluded
 
-- Original real/synthetic audio and derived real-reference WAVs, including per-recording audio-folder JSON sidecars.
+- Standalone original real/synthetic audio and derived real-reference WAVs, including per-recording audio-folder JSON sidecars. Selected excerpt bytes are embedded only in the explicitly requested portable listening HTML described above.
 - Model weights, local Python environments, dependency installation folders, cache/temp files and local browser/server state.
 - API keys, environment files, raw account/auth responses and the local budget-state guard.
 - Bulky real-source transcript/word/segment exports and raw full-recording feature tables containing full text. Rebuild from the pinned source snapshot instead of treating Git as a dataset store.
